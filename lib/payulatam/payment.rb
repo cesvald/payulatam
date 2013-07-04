@@ -1,4 +1,4 @@
-module Pagosonline
+module Payulatam
   class Payment < Hashie::Dash
     GATEWAY = "https://gatewaylap.pagosonline.net/ppp-web-gateway/"
     TEST_GATEWAY= "https://stg.gatewaylap.pagosonline.net/ppp-web-gateway/"
@@ -28,7 +28,7 @@ module Pagosonline
     end
 
     def form(options = {})
-      id = params[:id] || "pagosonline"
+      id = params[:id] || "payulatam"
 
       form = <<-EOF
         <form

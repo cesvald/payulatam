@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "pagosonline/version"
+require "payulatam/version"
 
 Gem::Specification.new do |s|
-  s.name        = "pagosonline"
-  s.version     = Pagosonline::VERSION
+  s.name        = "payulatam"
+  s.version     = Payulatam::VERSION
   s.authors     = ["Sebastian Gamboa"]
   s.email       = ["me@sagmor.com"]
   s.homepage    = ""
-  s.summary     = %q{Pagosonline}
-  s.description = %q{Pagosonline}
+  s.summary     = %q{Payulatam}
+  s.description = %q{Payulatam}
 
-  s.rubyforge_project = "pagosonline"
+  s.rubyforge_project = "payulatam"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

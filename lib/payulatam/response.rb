@@ -1,4 +1,4 @@
-module Pagosonline
+module Payulatam
   class Response
     SIGNATURE_JOIN = "~"
 
