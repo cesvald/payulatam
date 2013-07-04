@@ -10,19 +10,19 @@ module Payulatam
     end
 
     def test?
-      params["prueba"] == "1"
+      params["test"] == "1"
     end
 
     def currency
-      params["moneda"]
+      params["currency"]
     end
 
     def signature
-      params["firma"]
+      params["signature"]
     end
 
     def state_code
-      (params["estado"] || params["estado_pol"]).to_i
+      (params["transactionState"] || params["state_pol"]).to_i
     end
 
     def state
@@ -48,11 +48,11 @@ module Payulatam
     end
 
     def amount
-      self.params["valor"].to_f
+      self.params["TX_VALUE"].to_f
     end
 
     def reference
-      self.params["ref_venta"]
+      self.params["referenceCode"]
     end
 
     def transaccion_id

@@ -56,24 +56,24 @@ module Payulatam
 
       def params
         params = {
-          "usuarioId"         => self.client.merchant_id,
-          "cuentaId"          => self.client.account_id,
-          "refVenta"          => self.reference,
-          "firma"             => self.signature,
-          "valor"             => self.amount.to_i,
-          "iva"               => nil,
-          "baseDevolucionIva" => nil,
-          "moneda"            => self.currency,
-          "descripcion"       => self.description,
+          "merchantId"        => self.client.merchant_id,
+          "accountId"         => self.client.account_id,
+          "referenceCode"     => self.reference,
+          "signature"         => self.signature,
+          "amount"            => self.amount.to_i,
+          "tax"               => nil,
+          "taxReturnBase"     => nil,
+          "currency"          => self.currency,
+          "description"       => self.description,
           "lng"               => self.language,
-          "url_respuesta"     => self.response_url,
-          "url_confirmacion"  => self.confirmation_url,
+          "confirmationUrl"   => self.response_url,
+          "responseUrl"       => self.confirmation_url,
 
-          "nombreComprador"   => self.buyer_name
+          "payerFullName"     => self.buyer_name
         }
 
         if self.client.test?
-          params["prueba"] = 1
+          params["test"] = 1
         end
 
         if self.extra
