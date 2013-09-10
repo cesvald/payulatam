@@ -5,7 +5,8 @@ module Payulatam
     attr_accessor :client
     attr_accessor :params
 
-    def initialize(params)
+    def initialize(client, params = {})
+      self.client = client
       self.params = params
     end
 
