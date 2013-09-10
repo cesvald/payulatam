@@ -5,8 +5,8 @@ require "payulatam/version"
 Gem::Specification.new do |s|
   s.name        = "payulatam"
   s.version     = Payulatam::VERSION
-  s.authors     = ["Sebastian Gamboa", "Gustavo Guichard"]
-  s.email       = ["me@sagmor.com", "gustavoguichard@gmail.com"]
+  s.authors     = ["Sebastian Gamboa", "Gustavo Guichard", "Daniel Weinmann"]
+  s.email       = ["me@sagmor.com", "gustavoguichard@gmail.com", "danielweinmann@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{Payulatam}
   s.description = %q{Payulatam}

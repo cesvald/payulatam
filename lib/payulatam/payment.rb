@@ -14,7 +14,6 @@ module Payulatam
     property :response_url
     property :confirmation_url
     property :extra
-    property :buyer_name
     property :language, :default => "es"
 
     def signature
@@ -61,15 +60,13 @@ module Payulatam
           "referenceCode"     => self.reference,
           "signature"         => self.signature,
           "amount"            => self.amount.to_i,
-          "tax"               => nil,
-          "taxReturnBase"     => nil,
+          "tax"               => 0,
+          "taxReturnBase"     => 0,
           "currency"          => self.currency,
           "description"       => self.description,
           "lng"               => self.language,
-          "confirmationUrl"   => self.response_url,
-          "responseUrl"       => self.confirmation_url,
-
-          "payerFullName"     => self.buyer_name
+          "confirmationUrl"   => self.confirmation_url,
+          "responseUrl"       => self.response_url
         }
 
         if self.client.test?

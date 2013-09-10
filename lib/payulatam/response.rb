@@ -10,19 +10,19 @@ module Payulatam
     end
 
     def test?
-      params["test"] == "1"
+      self.params["test"] == "1"
     end
 
     def currency
-      params["currency"]
+      self.params["currency"]
     end
 
     def signature
-      params["signature"]
+      self.params["signature"]
     end
 
     def state_code
-      (params["transactionState"] || params["state_pol"]).to_i
+      (self.params["transactionState"] || self.params["state_pol"]).to_i
     end
 
     def state
@@ -40,11 +40,11 @@ module Payulatam
     end
 
     def success?
-      self.state == :approved
+      self.valid? && self.state == :approved
     end
 
     def failure?
-      [:error, :expired, :declined].include? self.state
+      self.valid? && [:error, :expired, :declined].include?(self.state)
     end
 
     def amount
@@ -55,8 +55,8 @@ module Payulatam
       self.params["referenceCode"]
     end
 
-    def transaccion_id
-      self.params["transaccion_id"]
+    def transaction_id
+      (self.params["transactionId"] || self.params["transaction_id"])
     end
 
     def valid?
