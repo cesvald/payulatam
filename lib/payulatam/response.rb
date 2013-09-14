@@ -19,7 +19,7 @@ module Payulatam
     end
 
     def signature
-      self.params["signature"]
+      self.params["signature"] || self.params["sign"]
     end
 
     def state_code
@@ -49,11 +49,11 @@ module Payulatam
     end
 
     def amount
-      self.params["TX_VALUE"].to_f
+      (self.params["TX_VALUE"] || self.params["value"]).to_f
     end
 
     def reference
-      self.params["referenceCode"]
+      self.params["referenceCode"] || self.params["reference_sale"]
     end
 
     def transaction_id
